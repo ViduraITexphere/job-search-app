@@ -1,6 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import { Grid, InputAdornment, TextField } from "@mui/material";
 import "./SignIn.css";
+
+//GOOGLE LOGIN
+import LoginButton from "../Auth/googleAuth";
+import {gapi} from 'gapi-script';
+
 
 // Icons
 import { BsShieldLock } from "react-icons/bs";
@@ -10,8 +16,23 @@ import { FiMail } from "react-icons/fi";
 import {isMobile} from 'react-device-detect';
 console.log ("isMobile", isMobile);
 
+// Google Login client Id
+const clientId = '512570607110-rnt0aersvlk9btgbhaqrv8rrehpq3udr.apps.googleusercontent.com';
+
 function SignIn() {
+
+  useEffect(() => {
+    function start () {
+      gapi.client.init({
+        clientId: clientId,
+        scope: ''
+      })
+    };
+    gapi.load('client:auth2', start);
+  });
+
   return (
+    
     <Grid container className={isMobile ? "container-mobile" : "container"}>
     <Grid item xs={12} md={6} className="container-left">
         <Grid className="signin-image">
@@ -24,6 +45,15 @@ function SignIn() {
             <div className="heading">
               <h1>Sign In to your Account</h1>
               <h5>Welcome Back. Select method to Login</h5>
+            </div>
+            <div className="social-login">
+              <div className="google-btn">
+                <LoginButton />
+
+              {/* add to this logout page */}
+                {/* <LogoutButton /> */}
+
+              </div>
             </div>
             <TextField
               InputProps={{
