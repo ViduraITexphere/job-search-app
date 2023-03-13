@@ -1,7 +1,6 @@
 import { Button, Grid } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { GoogleLogin } from "react-google-login";
-import { makeStyles } from "@mui/styles";
 
 // Icons
 import { FcGoogle } from "react-icons/fc";
@@ -14,6 +13,13 @@ function GoogleAuth() {
 
   const onSuccess = (res) => {
     console.log("[Login Success] currentUser:", res.profileObj);
+    localStorage.setItem("Profile", JSON.stringify(res.profileObj));
+    const user = JSON.parse(localStorage.getItem("Profile"));
+
+    if (user) {
+      window.location.href = "/home";
+    }
+
   };
 
   const onFailure = (res) => {
@@ -28,7 +34,7 @@ function GoogleAuth() {
           <Button
             style={{border : "2px solid #bdbdbd", textTransform: "none",
             display: "flex", alignItems: "center", justifyContent: "center",
-            width: "100%", height: "100%", borderRadius: "5px", gap: "10px",
+            width: "100%", height: "100%", gap: "10px",
             color: "#808080", fontFamily: "fontFamily: 'Inter'", fontWeight: "500", borderRadius: "7px"}}     
             onClick={renderProps.onClick}
             disabled={renderProps.disabled}

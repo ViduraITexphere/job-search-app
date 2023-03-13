@@ -1,0 +1,21 @@
+.menuItm {
+    font-size: 13px !important;
+}
+.menuItm:hover {
+    background-color: #f74e31 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 10px;
+}
+.menuItmLogot {
+    font-size: 13px !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 10px;
+}
+.menuItmLogot:hover {
+    background-color: #ca1e00 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 10px;
+}
