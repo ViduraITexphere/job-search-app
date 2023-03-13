@@ -6,6 +6,7 @@ import "./AddStory.css";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import { makeStyles } from "@mui/styles";
+import SearchSelect from "../../components/UI/SearchSelect/SearchSelect";
 
 const useStyles = makeStyles({
   TextField: {
@@ -85,15 +86,7 @@ function AddStory() {
           ))}
         <div className="add_participants">
           <label className="label">Add people (Optional)</label>
-          <TextField
-            fullWidth
-            InputProps={{
-              className: classes.TextField,
-            }}
-            id="outlined-size-small"
-            placeholder="Search by username or email"
-            size="small"
-          />
+          <SearchSelect />
         </div>
         </div>
       </Grid>
