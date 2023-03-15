@@ -5,8 +5,9 @@ import UserStoryAdd from "../UserStoryAddPopup/UserStoryAdd";
 
 
 // material ui
-import { Badge, Button, Typography } from "@mui/material";
+import { Badge, Button, IconButton, Typography } from "@mui/material";
 import { IoIosNotifications } from "react-icons/io";
+import { MdFormatListBulletedAdd } from "react-icons/md";
 import AddStory from "../../../Pages/AddStory/AddStory";
 import { Navigate } from "react-router-dom";
 
@@ -30,7 +31,10 @@ function NavBar() {
       </div>
       <div className="navbar__right">
       {/* <Button className="navBtn" variant="contained" onClick={handleClick}>+ Add</Button> */}
-      <Button className="navBtn" variant="contained" onClick={handleClick}>+ Add</Button>
+      {/* <Button className="navBtn" variant="contained" onClick={handleClick}>+ Add</Button> */}
+      <IconButton onClick={handleClick} sx={{color:'white'}}>
+        <MdFormatListBulletedAdd size={26} />
+      </IconButton>
       <UserStoryAdd open={open} setOpen={setOpen} />
       <Badge variant="dot" color="warning">
           <IoIosNotifications size={26} style={{ color: "white", cursor:'pointer' }} />

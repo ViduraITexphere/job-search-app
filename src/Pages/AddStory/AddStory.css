@@ -25,9 +25,9 @@
     border: "1px solid #30363d";
 }
 .story_wrapper {
- 
-    flex-direction: column;
-    max-width: 700px;
+    max-width: 800px;
+    display: flex;
+    gap: 20px;
 }
 .sub_heading {
     font-size: 13px !important;
@@ -38,6 +38,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-right: 40px;
+    border-right: 1px solid #30363d;
+    height: fit-content;
+    z-index: 1;
 }
 .label{
     font-size: 14px;
@@ -72,4 +76,85 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+}
+.due_date{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.due_date button{
+    display: flex;
+    width: 100px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.acceptance_criteria{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+.create_story_btn_wrapper{
+    padding-left: 30px;
+}
+.priority{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+.priority_list{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.create_story_btn_wrap{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 40px;
+}
+.create_story_btn{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    padding: 10px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #2ea44f;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+.cancel_story_btn{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    padding: 10px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
 }

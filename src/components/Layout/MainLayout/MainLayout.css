@@ -13,7 +13,8 @@ body {
 }
 
 .container-right-body {
-    background-color: #0d1117;
+    /* background-color: #0d1117; */
+    background-color: #0d1420;
     display: flex;
     flex-direction: row;
     height: 93vh;
