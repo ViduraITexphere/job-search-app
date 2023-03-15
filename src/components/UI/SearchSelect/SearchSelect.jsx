@@ -3,7 +3,7 @@ import Select from 'react-select';
 import makeAnimated from "react-select/animated";
 
 
-function SearchSelect() {
+function SearchSelect(props) {
     const data = [
         {value: 'vidura@gmail.com', label: 'vidura@gmail.com'},
         {value: 'ravindranath@gmail.com', label: 'ravindranath@gmail.com'},
@@ -14,6 +14,11 @@ function SearchSelect() {
     ]
     const [options] = useState(data);
     const animatedComponents = makeAnimated();
+
+  
+    const handleSelectChange = (selectedOption) => {
+        props.onSelectChange(selectedOption);
+      }
 
   return (
     <Select
@@ -91,6 +96,7 @@ function SearchSelect() {
       isSearchable={true}
       isMulti
       placeholder="Select People"
+      onChange={handleSelectChange} 
     />
     
     

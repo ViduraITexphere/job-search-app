@@ -8,6 +8,8 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import "./AddStory.css";
+import { useSelector } from 'react-redux';
+
 
 // mui icons
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -16,6 +18,8 @@ import { makeStyles } from "@mui/styles";
 import SearchSelect from "../../components/UI/SearchSelect/SearchSelect";
 import PickDate from "../../components/UI/PickDate/PickDate";
 import { pink } from "@mui/material/colors";
+import { useDispatch } from 'react-redux';
+import { updateCreateStoryInputValues } from "../../Actions/Story.Action";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -40,8 +44,17 @@ const useStyles = makeStyles({
 });
 
 function AddStory() {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [storyList, setStoryList] = useState([{ story: "" }]);
+  const [selectedOption, setSelectedOption] = useState([]);
+  const [inputValueStoryName, setInputValueStoryName] = useState('');
+  console.log ("data", selectedOption, inputValueStoryName);
+
+  const dataInput = useSelector((state) => state.inputValuesReducer);
+  console.log ("dataInput", dataInput);
+
+  
 
   const handleAddStory = () => {
     setStoryList([...storyList, { story: "" }]);
@@ -53,7 +66,25 @@ function AddStory() {
     setStoryList(list);
   };
 
+  const handleSelectChange = (selectedOption) => {
+    setSelectedOption(selectedOption);
+  }
+
+  const handleInputChange = (e) => {
+    setInputValueStoryName(e.target.value);
+  };
+
+  const handleDataSubmit = (e) => {
+    e.preventDefault();
+    // Dispatch the updateInputValues action with the input values
+    dispatch(updateCreateStoryInputValues(selectedOption, inputValueStoryName));
+
+    // Send data to the database here, including the input values
+  }
+
+
   return (
+    <>
     <Grid className="addStory" container>
       <Grid className="story_wrapper" item xs={12} md={6}>
         <div className="story_heading">
@@ -67,6 +98,8 @@ function AddStory() {
           <Divider sx={{ bgcolor: "#30363c" }} />
           <label className="label">Story Name (Required)</label>
           <TextField
+            onChange={handleInputChange}
+            value={inputValueStoryName}
             fullWidth
             InputProps={{
               className: classes.TextField,
@@ -115,7 +148,7 @@ function AddStory() {
           ))}
           <div className="add_participants">
             <label className="label">Add people</label>
-            <SearchSelect />
+            <SearchSelect onSelectChange={handleSelectChange} />
           </div>
           <div className="acceptance_criteria">
             <label className="label">Acceptance Criteria (Optional)</label>
@@ -150,7 +183,7 @@ function AddStory() {
                     color: pink[600],
                   },
                 }}
-              />
+                />
               <label className="label"> Critical </label>
               <Checkbox {...label} defaultChecked />
               <label className="label"> Alarming </label>
@@ -160,7 +193,7 @@ function AddStory() {
             </div>
           </div>
           <div className="create_story_btn_wrap">
-            <button className="create_story_btn">Create Story</button>
+            <button className="create_story_btn" type="submit" onClick={handleDataSubmit}>Create Story</button>
             <button className="cancel_story_btn" onClick={() => {
               window.location.href = "/home"
             }}>close</button>
@@ -168,6 +201,17 @@ function AddStory() {
         </div>
       </Grid>
     </Grid>
+    {/* {dataInput?.selectedOptionvalue.map ((item, index) => {
+      return (
+        <div key={index}>
+          <p>{item.label}</p>
+        </div>
+      )
+    })} */}
+
+            
+            </>
+
   );
 }
 
