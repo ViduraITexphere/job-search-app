@@ -1,12 +1,12 @@
 // import { combineReducers } from 'redux';
-// import inputValuesReducer from './reducers/inputValuesReducer';
+// import storyReducer from './reducers/storyReducer';
 
 // const rootReducer = combineReducers({
-//   inputValuesReducer: inputValuesReducer,
+//   storyReducer: storyReducer,
 //   // other reducers go here
 // });
 
 // export default combineReducers({
-//     inputValuesReducer: inputValuesReducer,
+//     storyReducer: storyReducer,
 //     // other reducers go here
 //     });

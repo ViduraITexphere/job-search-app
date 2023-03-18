@@ -1,9 +1,9 @@
 import { combineReducers, createStore } from 'redux';
-import inputValuesReducer from '../Reducers/Reducer.jsx';
+import storyReducer from '../Reducers/Reducer.jsx';
 
 
 const rootReducer = combineReducers({
-  inputValuesReducer: inputValuesReducer,
+  storyReducer: storyReducer,
   // other reducers go here
 });
 

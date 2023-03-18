@@ -1,22 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
 
-function PickDate() {
-    const [startDate, setStartDate] = useState(new Date());
+function PickDate(props) {
+  const [startDate, setStartDate] = useState(new Date());
+
+  const handleDateChange = (date) => {
+    setStartDate(date);
+    props.handleDueDateSubmit(date);
+  };
+
   return (
     <>
-    <button className="example-custom-input" >
+      <button className="example-custom-input">
         {format(startDate, "dd-MM-yyyy")}
       </button>
       <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      inline
-    />
-          </>
-  )
+        selected={startDate}
+        onChange={handleDateChange}
+        inline
+      />
+    </>
+  );
 }
 
 export default PickDate;

@@ -12,13 +12,16 @@ function SearchSelect(props) {
         {value: 'kaushalya@gmail.com', label: 'kaushalya@gmail.com'},
         {value: 'shinashi@gmail.com', label: 'shinashi@gmail.com'},
     ]
-    const [options] = useState(data);
+    const [selectedValues, setSelectedValues] = useState([]);
     const animatedComponents = makeAnimated();
 
   
-    const handleSelectChange = (selectedOption) => {
-        props.onSelectChange(selectedOption);
-      }
+    const handleSelectChange = (selectedOptions) => {
+        setSelectedValues(selectedOptions.map(option => option.value));
+        if (props.onSelectChange) {
+            props.onSelectChange(selectedOptions.map(option => option.value));
+        }
+    };
 
   return (
     <Select
@@ -26,6 +29,7 @@ function SearchSelect(props) {
         control: (base, state) => ({
           ...base,
           border: "1px solid #acadac",
+          maxWidth: "800px",
           minHeight: "45px",
           backgroundColor: "black",
           color: "black",
@@ -91,12 +95,12 @@ function SearchSelect(props) {
             fontSize: "12px",
         }),
       }}
-      options={options}
+      options={data}
+      onChange={handleSelectChange}
       components={animatedComponents}
       isSearchable={true}
       isMulti
       placeholder="Select People"
-      onChange={handleSelectChange} 
     />
     
     

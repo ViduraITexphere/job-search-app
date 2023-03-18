@@ -7,13 +7,13 @@ import UserStoryAdd from "../UserStoryAddPopup/UserStoryAdd";
 // material ui
 import { Badge, Button, IconButton, Typography } from "@mui/material";
 import { IoIosNotifications } from "react-icons/io";
-import { MdFormatListBulletedAdd } from "react-icons/md";
+import AddIcon from '@mui/icons-material/Add';
 import AddStory from "../../../Pages/AddStory/AddStory";
 import { Navigate } from "react-router-dom";
 
 // get profile user
 const user = JSON.parse(localStorage.getItem("Profile"));
-console.log("user", user?.name);
+// console.log("user", user?.name);
 
 function NavBar() {
 
@@ -27,13 +27,18 @@ function NavBar() {
     <>
     <div className="navbar">
       <div className="navbar__left">
-        <Typography sx={{color:"white", fontFamily:'Poppins, sans-serif !important', fontSize:'13px', fontWeight:300}}>Good Morning 🌄, {user?.name}</Typography>
+      <div className="SideDrawer__header">
+            <div className="logo">
+                <img src={require('../../../assets/images/Logo.png')} alt="logo" />
+            </div>
+        </div>
+        <Typography className="typography" sx={{color:"white"}}>Good Morning , {user?.name} 🚀</Typography>
       </div>
       <div className="navbar__right">
       {/* <Button className="navBtn" variant="contained" onClick={handleClick}>+ Add</Button> */}
       {/* <Button className="navBtn" variant="contained" onClick={handleClick}>+ Add</Button> */}
       <IconButton onClick={handleClick} sx={{color:'white'}}>
-        <MdFormatListBulletedAdd size={26} />
+        <AddIcon size={26} />
       </IconButton>
       <UserStoryAdd open={open} setOpen={setOpen} />
       <Badge variant="dot" color="warning">

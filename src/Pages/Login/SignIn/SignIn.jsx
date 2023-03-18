@@ -18,7 +18,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 // check whether device is mobilr or not
 import { isMobile } from "react-device-detect";
-console.log("isMobile", isMobile);
 
 // Google Login client Id
 const clientId =

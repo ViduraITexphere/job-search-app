@@ -7,10 +7,10 @@ import NavBar from "../../UI/NavigationBar/NavBar";
 function MainLayout() {
   return (
     <Grid container className="container">
-      <Grid item xs={2} className="container-sidebar">
+      <Grid className="container-sidebar">
         <DrawerBrower />
       </Grid>
-      <Grid container item md={10} className="container-right-side">
+      <Grid container className="container-right-side">
         <Grid item xs={12} className="container-right-header">
             <NavBar />
         </Grid>

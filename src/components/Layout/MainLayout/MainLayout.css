@@ -14,10 +14,17 @@ body {
 
 .container-right-body {
     /* background-color: #0d1117; */
-    background-color: #0d1420;
+    background-color: #0d1117;
     display: flex;
     flex-direction: row;
     height: 93vh;
     width: 100%;
     color: aliceblue;
+    padding-left: 300px;
 }
+@media (max-width: 900px) {
+    .container-right-body {
+      padding-left: 0;
+    }
+  }
+  

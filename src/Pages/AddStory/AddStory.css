@@ -28,6 +28,7 @@
     max-width: 800px;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 .sub_heading {
     font-size: 13px !important;
@@ -38,10 +39,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-right: 40px;
-    border-right: 1px solid #30363d;
+    /* border-right: 1px solid #30363d; */
     height: fit-content;
     z-index: 1;
+    width: 800px;
 }
 .label{
     font-size: 14px;
@@ -122,7 +123,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 .create_story_btn{
     display: flex;
@@ -131,15 +132,15 @@
     padding: 10px;
     height: 30px;
     border-radius: 4px;
-    background-color: #2ea44f;
-    color: #ffffff;
+    background-color: #238636;
+    color: #d1d1d1;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: none;
     border: none;
     box-shadow: none;
-    cursor: pointer;
+   
 }
 .cancel_story_btn{
     display: flex;
@@ -149,10 +150,10 @@
     height: 30px;
     border-radius: 4px;
     background-color: #000000;
-    color: #ffffff;
+    color: #d1d1d1;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: none;
     border: none;
     box-shadow: none;

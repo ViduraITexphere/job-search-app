@@ -8,12 +8,7 @@ import MapsUgcRoundedIcon from '@mui/icons-material/MapsUgcRounded';
 function DrawerBrower() {
   return (
     <div className="SideDrawer">
-        <div className="SideDrawer__header">
-            <div className="logo">
-                <img src={require('../../../assets/images/Logo.png')} alt="logo" />
-                <h3>ProManage</h3>
-            </div>
-        </div>
+        
         <div className="SideDrawer__body">
             <div className="SideDrawer__body__list">
                 <div className="SideDrawer__body__item">

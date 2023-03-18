@@ -1,10 +1,7 @@
 import { Grid } from "@mui/material";
 import "./Home.css";
-import { useSelector } from 'react-redux';
-
 
 function Home() {
-  
 
   return (
     <Grid container className="container">

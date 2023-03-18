@@ -1,13 +1,11 @@
-export const UPDATE_CREATE_STORY_INPUT_VALUES = 'UPDATE_CREATE_STORY_INPUT_VALUES';
-export const updateCreateStoryInputValues = (selectedOption, inputValueStoryName) => {
-    console.log ("action-people", selectedOption);
-    console.log ("action-story-name", inputValueStoryName );
+export const CREATE_STORY = 'CREATE_STORY';
+
+export const postStory = (data) => {
+  // console.log("actionFile", data);
+
     return {
-      type: UPDATE_CREATE_STORY_INPUT_VALUES,
-      payload: {
-        selectedOption,
-        inputValueStoryName,
-      },
+      type: CREATE_STORY,
+      payload: data
     };
   };
-  
+

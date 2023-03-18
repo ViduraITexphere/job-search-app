@@ -2,7 +2,7 @@
     font-size: 13px !important;
 }
 .menuItm:hover {
-    background-color: #f74e31 !important;
+    background-color: #222222 !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 10px;
@@ -14,7 +14,8 @@
     border-radius: 10px;
 }
 .menuItmLogot:hover {
-    background-color: #ca1e00 !important;
+    background-color: #911600 !important;
+    opacity: 50% !important;
     box-shadow: none !important;
     border: none !important;
     border-radius: 10px;
